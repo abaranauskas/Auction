@@ -1,0 +1,8 @@
+# Task for C# programmers
+
+## Story
+Accidentally your friend working in auction house forgot "AuctionData" file and "ItemName" class on your computer. You are poor student living in dormitory, who wants to earn a lot of money in the shortest time. You created a plan, where the easiest way for you is to get most benefit account from an auction house, that has most profited resources to get money. Before doing it, you should get know what items are most expensive and profit to make you rich in a short time. After acquaintance with file, you know that there is information about price and number of items that are being sold in auction now. In addition to this, you have now information about auction house members and their available resources and what they sold most of all.
+
+Your plan starts from extracting item, name, ID and price to separate class to make it easier to understand and write this information to console, where should be written item name and its ID, maximal and minimal price, average and median price for each item name. Secondly, you need to get information about top 10 of the most expensive items in auction house and order it by sum. In addition, you must get information about 10 most active account owners and order it by number and price of sold items. You are required to also write unit tests for the application. Auctions and item names should be saved to local database. 
+
+If something wasn’t done from this task, it is not the reason not to send anything at all.
