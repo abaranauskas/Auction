@@ -2,12 +2,14 @@
 using Nortal.Auction.Domain.Items;
 using Nortal.Auction.Helpers;
 using Nortal.Auction.Infrastructure.Persistence;
+using Nortal.Auction.Items.Dto;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Nortal.Auction
+namespace Nortal.Auction.Items
 {
+    //TODO: Validation against empty data base needed.
     public class ItemsController
     {
         private readonly ItemRepository _itemRepository;

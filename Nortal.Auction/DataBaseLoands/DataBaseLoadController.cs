@@ -8,8 +8,9 @@ using Nortal.Auction.Infrastructure.Persistence;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Nortal.Auction
+namespace Nortal.Auction.DataBaseLoands
 {
+    //TODO:  Validations against mutiple same file or data load needed.
     public class DataBaseLoadController
     {
         private readonly AuctionContext _auctionContext;

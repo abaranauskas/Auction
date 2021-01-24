@@ -22,10 +22,13 @@ namespace Nortal.Auction.Infrastructure.Persistence
                     .AddConsole();
             });
 
-            //optionsBuilder
-            //        .UseLoggerFactory(loggerFactory)
-            //        .EnableSensitiveDataLogging();
-
+            if (Settings.IsEfLogsEnabled())
+            {
+                optionsBuilder
+                    .UseLoggerFactory(loggerFactory)
+                    .EnableSensitiveDataLogging();
+            }
+           
             optionsBuilder
                 .UseSqlServer(Settings.GetConnectionString())
                 .UseLazyLoadingProxies();

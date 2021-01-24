@@ -1,34 +1,25 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Nortal.Auction.Infrastructure.Persistence;
+using System;
 using System.IO;
 
 namespace Nortal.Auction.Utils
 {
-    public class Settings
+    public static  class Settings
     {
-        public string ConnectionString { get; }
-
-        private Settings()
-        {
-            ConnectionString = GetConnectionString();
-            //AuctionContext.ResetDataBase();
-        }
-
-        //public AuctionContext AuctionContext { get; }
-
-        public static Settings Init()
-        {
-            return new Settings();
-        }
-
-        public static string GetConnectionString()
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+        private static IConfigurationRoot _configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            return configuration["ConnectionString"];
+        public static string GetConnectionString()
+        {      
+            return _configuration["ConnectionString"];
+        }
+
+        public static bool IsEfLogsEnabled()
+        {
+            return bool.Parse(_configuration["EFLogsEnabled"]);
         }
     }
 }

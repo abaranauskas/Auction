@@ -1,9 +1,9 @@
 ﻿using Nortal.Auction.Helpers;
 
-namespace Nortal.Auction
+namespace Nortal.Auction.Items.Dto
 {
     public class ItemDetailsOutputModel
-    {      
+    {
         public ItemDetailsOutputModel(long id, string name, PriceStatsModel stats)
         {
             Id = id;

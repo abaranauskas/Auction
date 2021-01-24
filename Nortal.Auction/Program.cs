@@ -1,5 +1,7 @@
 ﻿using Nortal.Auction.Data;
+using Nortal.Auction.DataBaseLoands;
 using Nortal.Auction.Infrastructure.Persistence;
+using Nortal.Auction.Items;
 using Nortal.Auction.Utils;
 using System;
 using System.IO;
@@ -12,22 +14,21 @@ namespace Nortal.Auction
     {
         private static ItemsController _itemsController;
         private static DataBaseLoadController _dataBaseLoadController;
-        private static AuctionsController _auctionsController;
 
         static async Task Main(string[] args)
-        {
-            var settings = Settings.Init();
-
+        {           
             using var context = new AuctionContext();
+            context.Database.EnsureCreated();
             _itemsController = new ItemsController(context);
             _dataBaseLoadController = new DataBaseLoadController(context);
-            _auctionsController = new AuctionsController(context);
 
-            int action = int.MaxValue;
-            while (action != 0)
+            while (true)
             {
                 PrintMenu();
-                action = int.Parse(Console.ReadLine());
+                var result = int.TryParse(Console.ReadLine(), out var action);
+
+                if (!result)
+                    continue;
 
                 switch (action)
                 {
@@ -43,8 +44,8 @@ namespace Nortal.Auction
                     case 4:
                         await GetTenMostActiveOwners();
                         break;
-                    default:
-                        break;
+                    case 0:
+                        return;                    
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿namespace Nortal.Auction
+﻿namespace Nortal.Auction.Items.Dto
 {
     public class MostExpensiveItemModel
     {

@@ -1,8 +1,8 @@
-﻿namespace Nortal.Auction
+﻿namespace Nortal.Auction.Items.Dto
 {
     public class MostActiveOwnerModel
     {
-       
+
         public MostActiveOwnerModel(string owner, int salesQuantity, decimal salesAmount)
         {
             Owner = owner;
@@ -11,7 +11,7 @@
         }
 
         public string Owner { get; }
-        public int SalesQuantity { get;  }
-        public decimal SalesAmount { get;  }
+        public int SalesQuantity { get; }
+        public decimal SalesAmount { get; }
     }
 }
